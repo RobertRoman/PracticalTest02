@@ -11,6 +11,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class PracticalTest02MainActivity extends AppCompatActivity {
 
     // Server widgets
@@ -93,6 +96,8 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
         cursButton = (Button)findViewById(R.id.get_curs_button);
         cursButton.setOnClickListener(getCursButtonClickListener);
         cursTextView = (TextView)findViewById(R.id.curs_text_view);
+
+
     }
 
     @Override

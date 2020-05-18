@@ -41,14 +41,16 @@ public class ClientThread extends Thread {
             printWriter.println(informationType);
             printWriter.flush();
             String cursInformation;
-            cursInformation = bufferedReader.readLine();
-            final String finalizedCursInformation = cursInformation;
-            cursTextView.post(new Runnable() {
-                @Override
-                public void run() {
-                    cursTextView.setText(finalizedCursInformation);
-                }
-            });
+            while (true) {
+                cursInformation = bufferedReader.readLine();
+                final String finalizedCursInformation = cursInformation;
+                cursTextView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        cursTextView.setText(finalizedCursInformation);
+                    }
+                });
+            }
 
         } catch (IOException ioException) {
             Log.e(Constants.TAG, "[CLIENT THREAD] An exception has occurred: " + ioException.getMessage());

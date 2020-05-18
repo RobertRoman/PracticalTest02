@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import cz.msebera.android.httpclient.client.ClientProtocolException;
 
@@ -28,6 +30,7 @@ public class ServerThread extends Thread {
                 ioException.printStackTrace();
             }
         }
+
         this.cursData = "";
     }
 
